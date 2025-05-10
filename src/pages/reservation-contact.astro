@@ -1,0 +1,222 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Réservation & Contact">
+  <div class="container section-padding">
+    <h1 class="text-center">Réservez Votre Séjour ou Contactez-Nous</h1>
+    <p class="text-center intro-text">Nous sommes impatients de vous accueillir en Provence ! Utilisez le formulaire ci-dessous pour toute demande de réservation ou d'information. Vous pouvez également nous joindre directement par téléphone ou email.</p>
+
+    <div class="reservation-contact-grid">
+      <!-- Formulaire de demande -->
+      <section id="formulaire-reservation" class="form-section">
+        <h2>Demande de Réservation / Information</h2>
+        <form action="#" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="name">Nom complet <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-group form-group-half">
+            <label for="arrival-date">Date d'arrivée</label>
+            <input type="date" id="arrival-date" name="arrival-date">
+          </div>
+          <div class="form-group form-group-half">
+            <label for="departure-date">Date de départ</label>
+            <input type="date" id="departure-date" name="departure-date">
+          </div>
+          <div class="form-group">
+            <label for="hebergement-choice">Hébergement souhaité (si connu)</label>
+            <select id="hebergement-choice" name="hebergement-choice">
+              <option value="">Non spécifié</option>
+              <option value="gite-lavande">Gîte Lavande</option>
+              <option value="chambre-romarin">Chambre Romarin</option>
+              <option value="gite-olivier">Gîte Olivier</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="guests">Nombre de personnes (adultes, enfants)</label>
+            <input type="text" id="guests" name="guests" placeholder="Ex: 2 adultes, 1 enfant">
+          </div>
+          <div class="form-group">
+            <label for="message">Votre message <span class="required">*</span></label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="button">Envoyer la demande</button>
+          </div>
+          <p class="form-notice"><span class="required">*</span> Champs obligatoires. Nous vous répondrons dans les plus brefs délais.</p>
+        </form>
+      </section>
+
+      <!-- Coordonnées et Carte -->
+      <aside id="coordonnees" class="info-section">
+        <h2>Nos Coordonnées</h2>
+        <div class="contact-details">
+          <p><strong>Adresse :</strong><br>
+            Gîtes en Provence<br>
+            123 Chemin des Lavandes<br>
+            84000 Merveilleux Village, Provence, France
+          </p>
+          <p><strong>Téléphone :</strong> <a href="tel:+33123456789">+33 (0)1 23 45 67 89</a></p>
+          <p><strong>Email :</strong> <a href="mailto:contact@gitesprovence.fr">contact@gitesprovence.fr</a></p>
+        </div>
+
+        <h3>Informations Pratiques</h3>
+        <ul class="info-pratiques">
+          <li><strong>Arrivée :</strong> à partir de 16h</li>
+          <li><strong>Départ :</strong> avant 11h</li>
+          <li>Animaux non admis (ou conditions spécifiques)</li>
+          <li>Paiements acceptés : Virements, Chèques, Espèces (pas de CB sur place)</li>
+          <li><a href="/conditions-generales">Consulter nos conditions générales de vente</a></li>
+        </ul>
+        
+        <h3>Nous Trouver</h3>
+        <div class="map-container">
+          <!-- Intégration Google Maps (iframe) -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46208.02392470838!2d5.401653302045884!3d43.93205097030083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ca11ba953f8711%3A0x40819a5fd9700d0!2sGordes!5e0!3m2!1sfr!2sfr!4v1678886400000!5m2!1sfr!2sfr" 
+            width="100%" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Carte Google Maps indiquant la localisation des gîtes">
+          </iframe>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Calendrier de disponibilités (à intégrer si un système est choisi) -->
+    <!-- 
+    <section id="disponibilites" class="section-padding text-center">
+      <h2>Consultez nos disponibilités</h2>
+      <div class="calendar-placeholder">
+        <p>[Intégration d'un calendrier de réservation ici, ex: widget externe ou iframe]</p>
+        <img src="https://via.placeholder.com/800x400.png?text=Calendrier+de+Disponibilités" alt="Calendrier de disponibilités" style="max-width:100%; height:auto;">
+      </div>
+    </section>
+    -->
+  </div>
+</MainLayout>
+
+<style>
+  .section-padding {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+  .intro-text {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--spacing-xl);
+    font-size: 1.1rem;
+  }
+  .reservation-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile first */
+    gap: var(--spacing-xxl);
+  }
+  @media (min-width: 992px) { /* Passer à 2 colonnes sur les grands écrans */
+    .reservation-contact-grid {
+      grid-template-columns: 2fr 1fr; /* Formulaire plus large */
+    }
+  }
+
+  /* Formulaire */
+  .form-section h2, .info-section h2, .info-section h3 {
+    color: var(--ocre-fonce);
+    margin-bottom: var(--spacing-lg);
+  }
+  .contact-form .form-group {
+    margin-bottom: var(--spacing-lg);
+  }
+  .contact-form label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: bold;
+  }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form input[type="tel"],
+  .contact-form input[type="date"],
+  .contact-form select,
+  .contact-form textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--ocre-principal);
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    box-sizing: border-box; /* Important pour que padding ne s'ajoute pas à width */
+  }
+  .contact-form textarea {
+    resize: vertical;
+  }
+  .contact-form .required {
+    color: var(--ocre-fonce);
+  }
+  .contact-form .form-group-half {
+    display: inline-block; /* Ou utiliser flex/grid pour aligner */
+    width: calc(50% - var(--spacing-sm)); /* Ajuster pour le gap */
+  }
+  .contact-form .form-group-half:first-of-type {
+    margin-right: var(--spacing-sm);
+  }
+  .contact-form .button {
+    width: auto;
+    padding-left: var(--spacing-xl);
+    padding-right: var(--spacing-xl);
+  }
+  .form-notice {
+    font-size: 0.9rem;
+    color: var(--text-principal);
+  }
+
+  /* Informations de contact */
+  .info-section {
+    background-color: var(--ocre-clair);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+  }
+  .contact-details p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5;
+  }
+  .contact-details a {
+    color: var(--ocre-fonce);
+  }
+  .info-pratiques {
+    list-style: disc;
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+  .info-pratiques li {
+    margin-bottom: var(--spacing-xs);
+  }
+  .map-container {
+    margin-top: var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden; /* Pour que l'iframe respecte le border-radius */
+    box-shadow: var(--shadow-sm);
+  }
+  .map-container iframe {
+    display: block; /* Évite un petit espace en dessous */
+  }
+
+  /* Placeholder pour le calendrier */
+  .calendar-placeholder {
+    background-color: var(--background-section);
+    padding: var(--spacing-xl);
+    border: 2px dashed var(--ocre-principal);
+    border-radius: var(--border-radius-md);
+    margin-top: var(--spacing-lg);
+  }
+</style>

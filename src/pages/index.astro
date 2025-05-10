@@ -1,0 +1,303 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+// Importer d'autres composants nécessaires pour la page d'accueil ici
+// import HeroSection from '../components/HeroSection.astro';
+// import AtoutsSection from '../components/AtoutsSection.astro';
+// import HebergementsApercu from '../components/HebergementsApercu.astro';
+// import PiscineNatureTeaser from '../components/PiscineNatureTeaser.astro';
+// import TemoignagesSection from '../components/TemoignagesSection.astro';
+---
+
+<MainLayout title="Accueil | Votre Séjour en Provence : Gîtes & Chambres d'Hôte avec Piscine et Nature">
+  
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <!-- Image de fond via CSS ou <img /> tag. Pour l'instant, une couleur. -->
+      <!-- Idéalement, un carrousel d'images ici -->
+    </div>
+    <div class="hero-content container">
+      <h1>Votre Séjour en Provence : Gîtes & Chambres d'Hôte avec Grande Piscine et Cadre Naturel d'Exception.</h1>
+      <p class="intro-text">À la recherche d'un séjour authentique en Provence alliant le charme de la campagne et le plaisir d'une piscine ? Nos hébergements vous attendent au cœur d'un environnement naturel préservé.</p>
+      <div class="hero-cta">
+        <a href="/hebergements/" class="button">Découvrez nos hébergements</a>
+        <a href="/piscine-nature/" class="button button-secondary">Explorez la Piscine & la Nature</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section "Atouts / Pourquoi Nous Choisir ?" -->
+  <section id="atouts" class="atouts-section container section-padding">
+    <h2 class="text-center">Pourquoi Nous Choisir ?</h2>
+    <div class="atouts-grid">
+      <!-- Icônes à ajouter (SVG ou font icons) -->
+      <div class="atout-item">
+        <div class="atout-icon">[Icône Piscine]</div>
+        <h3>Grande Piscine</h3>
+        <p>Détente et fraîcheur assurées dans notre vaste piscine, un véritable oasis.</p>
+      </div>
+      <div class="atout-item">
+        <div class="atout-icon">[Icône Nature]</div>
+        <h3>Cadre Naturel Préservé</h3>
+        <p>Calme, randonnées, biodiversité au sein d'un domaine d'exception.</p>
+      </div>
+      <div class="atout-item">
+        <div class="atout-icon">[Icône Charme]</div>
+        <h3>Séjours Authentiques</h3>
+        <p>Charme provençal, hospitalité chaleureuse et hébergements de caractère.</p>
+      </div>
+      <div class="atout-item">
+        <div class="atout-icon">[Icône Famille]</div>
+        <h3>Idéal Familles & Nature</h3>
+        <p>Espace, jeux en plein air, et découvertes pour petits et grands.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aperçu des Hébergements -->
+  <section id="apercu-hebergements" class="apercu-hebergements-section section-padding" style="background-color: var(--background-section);">
+    <div class="container">
+      <h2 class="text-center">Nos Hébergements de Charme</h2>
+      <div class="hebergements-grid">
+        <!-- Exemple de carte d'hébergement (à composantiser) -->
+        <article class="hebergement-card">
+          <img src="https://via.placeholder.com/400x300.png?text=Gîte+Lavande" alt="Gîte Lavande">
+          <div class="card-content">
+            <h3>Gîte Lavande</h3>
+            <p>Capacité: 4 personnes</p>
+            <a href="/hebergements/#gite-lavande" class="button button-secondary">En savoir plus</a>
+          </div>
+        </article>
+        <article class="hebergement-card">
+          <img src="https://via.placeholder.com/400x300.png?text=Chambre+Romarin" alt="Chambre Romarin">
+          <div class="card-content">
+            <h3>Chambre Romarin</h3>
+            <p>Capacité: 2 personnes</p>
+            <a href="/hebergements/#chambre-romarin" class="button button-secondary">En savoir plus</a>
+          </div>
+        </article>
+        <article class="hebergement-card">
+          <img src="https://via.placeholder.com/400x300.png?text=Gîte+Olivier" alt="Gîte Olivier">
+          <div class="card-content">
+            <h3>Gîte Olivier</h3>
+            <p>Capacité: 6 personnes</p>
+            <a href="/hebergements/#gite-olivier" class="button button-secondary">En savoir plus</a>
+          </div>
+        </article>
+      </div>
+      <div class="text-center" style="margin-top: var(--spacing-lg);">
+        <a href="/hebergements/" class="button">Voir tous nos hébergements</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section "Piscine & Nature" (teaser) -->
+  <section id="teaser-piscine-nature" class="teaser-piscine-nature-section section-padding">
+    <div class="container text-center">
+      <h2>Un Coin de Paradis Vous Attend</h2>
+      <p>Notre domaine avec sa grande piscine est la promesse de vacances réussies. Réservez votre coin de paradis et plongez dans la beauté de la Provence.</p>
+      <div class="teaser-images">
+        <img src="https://via.placeholder.com/500x350.png?text=Piscine+Magnifique" alt="Piscine magnifique" class="teaser-image">
+        <img src="https://via.placeholder.com/500x350.png?text=Cadre+Naturel+Exceptionnel" alt="Cadre naturel exceptionnel" class="teaser-image">
+      </div>
+      <a href="/piscine-nature/" class="button" style="margin-top: var(--spacing-lg);">Découvrir la Piscine & la Nature</a>
+    </div>
+  </section>
+
+  <!-- Témoignages Clients -->
+  <section id="temoignages" class="temoignages-section section-padding" style="background-color: var(--background-section);">
+    <div class="container">
+      <h2 class="text-center">Ce que nos clients disent</h2>
+      <div class="temoignages-grid">
+        <!-- Exemple de témoignage (à composantiser) -->
+        <blockquote class="temoignage-card">
+          <p>"Un séjour inoubliable ! La piscine est superbe et le cadre est tout simplement magique. Nous reviendrons !"</p>
+          <footer>- Famille Dupont</footer>
+        </blockquote>
+        <blockquote class="temoignage-card">
+          <p>"L'endroit parfait pour se ressourcer. Calme, nature et un accueil des plus chaleureux. Les gîtes sont très confortables."</p>
+          <footer>- Sophie L.</footer>
+        </blockquote>
+        <blockquote class="temoignage-card">
+          <p>"Nous avons adoré nos vacances ici. Les enfants ont passé leur temps dans la piscine et nous avons profité des belles randonnées."</p>
+          <footer>- Marc et Hélène V.</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+</MainLayout>
+
+<style>
+  .section-padding {
+    padding-top: var(--spacing-xxl);
+    padding-bottom: var(--spacing-xxl);
+  }
+
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    min-height: 70vh; /* Ajuster selon l'image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-clair);
+  }
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--ocre-principal); /* Couleur de fond temporaire */
+    /* background-image: url('/images/hero-piscine.jpg'); */ /* À remplacer par une vraie image */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  .hero-background::after { /* Overlay pour lisibilité du texte */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Ajuster l'opacité */
+  }
+  .hero-content h1 {
+    font-size: 2.8rem; /* ~45px */
+    margin-bottom: var(--spacing-md);
+    color: var(--text-clair); /* S'assurer que le H1 est clair sur fond sombre */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  }
+  .hero-content .intro-text {
+    font-size: 1.25rem; /* ~20px */
+    margin-bottom: var(--spacing-lg);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap; /* Pour les petits écrans */
+  }
+  .hero-cta .button {
+    font-size: 1.1rem;
+  }
+
+  /* Atouts Section */
+  .atouts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+  .atout-item {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--background-section);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+  }
+  .atout-icon {
+    font-size: 2.5rem; /* Taille de l'icône */
+    color: var(--ocre-fonce);
+    margin-bottom: var(--spacing-sm);
+    /* Remplacer par de vraies icônes SVG ou une font d'icônes */
+  }
+  .atout-item h3 {
+    font-size: 1.25rem;
+    color: var(--ocre-fonce);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  /* Aperçu Hébergements */
+  .hebergements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+  .hebergement-card {
+    background-color: var(--text-clair);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .hebergement-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .hebergement-card .card-content {
+    padding: var(--spacing-lg);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .hebergement-card h3 {
+    margin-top: 0;
+    color: var(--ocre-fonce);
+  }
+  .hebergement-card .button {
+    margin-top: var(--spacing-md);
+    align-self: flex-start;
+  }
+
+  /* Teaser Piscine & Nature */
+  .teaser-piscine-nature-section .teaser-images {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+  }
+  .teaser-piscine-nature-section .teaser-image {
+    max-width: 48%;
+    min-width: 300px; /* Pour éviter qu'elles deviennent trop petites */
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Témoignages Section */
+  .temoignages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+  .temoignage-card {
+    background-color: var(--ocre-clair);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    border-left: 5px solid var(--ocre-fonce);
+    margin: 0; /* Reset blockquote default margin */
+  }
+  .temoignage-card p {
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+  }
+  .temoignage-card footer {
+    font-weight: bold;
+    color: var(--ocre-fonce);
+    text-align: right;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.2rem;
+    }
+    .hero-content .intro-text {
+      font-size: 1rem;
+    }
+    .teaser-piscine-nature-section .teaser-image {
+      max-width: 100%;
+    }
+  }
+</style>

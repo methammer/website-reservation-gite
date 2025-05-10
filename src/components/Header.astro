@@ -1,0 +1,82 @@
+---
+// Pas de props pour l'instant
+---
+<header>
+  <nav class="container">
+    <a href="/" class="logo">Gîtes en Provence</a>
+    <ul>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/hebergements/">Nos Hébergements</a></li>
+      <li><a href="/piscine-nature/">Piscine & Nature</a></li>
+      <li><a href="/reservation-contact/">Réservation & Contact</a></li>
+      <!-- <li><a href="/activites-region/">Activités & Région</a></li> -->
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    background-color: var(--ocre-principal);
+    padding: var(--spacing-md) 0;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-family: var(--font-family-serif);
+    font-size: 1.5rem; /* ~24px */
+    font-weight: bold;
+    color: var(--text-clair);
+    text-decoration: none;
+  }
+  .logo:hover, .logo:focus {
+    color: var(--ocre-clair);
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--spacing-lg);
+  }
+  li a {
+    color: var(--text-clair);
+    text-decoration: none;
+    font-weight: 500;
+    padding: var(--spacing-sm) 0;
+    position: relative;
+  }
+  li a:hover, li a:focus, li a.active { /* 'active' class can be added by Astro for current page */
+    color: var(--ocre-clair);
+    text-decoration: none;
+  }
+  li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--ocre-clair);
+    transition: width 0.3s ease;
+  }
+  li a:hover::after, li a:focus::after, li a.active::after {
+    width: 100%;
+  }
+
+  /* Styles pour le menu burger sur mobile (à implémenter avec JS si besoin) */
+  @media (max-width: 768px) {
+    nav ul {
+      /* Cacher pour l'instant, ou transformer en menu burger */
+      display: none; 
+    }
+    /* Ajouter ici les styles pour un bouton burger et un menu déroulant/off-canvas */
+  }
+</style>

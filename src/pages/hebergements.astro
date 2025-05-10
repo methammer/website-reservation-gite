@@ -1,0 +1,151 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Nos Hébergements">
+  <div class="container section-padding">
+    <h1 class="text-center">Découvrez Nos Gîtes et Chambres d'Hôte</h1>
+    <p class="text-center intro-text">Chaque hébergement a été pensé pour votre confort et votre bien-être, alliant charme provençal et équipements modernes. Profitez d'un accès privilégié à notre grande piscine et au cadre naturel exceptionnel du domaine.</p>
+
+    <!-- Filtres (optionnel) -->
+    <!-- <div class="filters"> ... </div> -->
+
+    <div class="hebergements-list">
+      <!-- Exemple d'hébergement 1 -->
+      <article class="hebergement-item" id="gite-lavande">
+        <div class="hebergement-gallery">
+          <img src="https://via.placeholder.com/600x400.png?text=Gîte+Lavande+-+Vue+1" alt="Gîte Lavande - Vue principale">
+          <!-- Autres images pour une galerie/carrousel -->
+        </div>
+        <div class="hebergement-details">
+          <h2>Gîte Lavande</h2>
+          <p class="hebergement-capacity"><strong>Capacité :</strong> 2-4 personnes</p>
+          <p class="hebergement-description">
+            Ce charmant gîte offre une ambiance cosy et chaleureuse, parfait pour les couples ou les petites familles. Il dispose d'une chambre séparée, d'un salon avec canapé-lit, d'une cuisine équipée et d'une terrasse privative avec vue sur le jardin.
+          </p>
+          <p class="hebergement-equipements"><strong>Équipements :</strong> Cuisine complète, Salle de bain avec douche, Wi-Fi, Climatisation, TV, Linge de maison fourni, Accès piscine.</p>
+          <p class="hebergement-atouts"><strong>Atouts :</strong> Terrasse ombragée, Proximité piscine, Calme absolu.</p>
+          <div class="hebergement-actions">
+            <a href="/reservation-contact/?hebergement=gite-lavande" class="button">Réserver ce gîte</a>
+            <!-- <p class="hebergement-tarifs">À partir de <strong>90€ / nuit</strong></p> -->
+          </div>
+        </div>
+      </article>
+
+      <!-- Exemple d'hébergement 2 -->
+      <article class="hebergement-item" id="chambre-romarin">
+        <div class="hebergement-gallery">
+          <img src="https://via.placeholder.com/600x400.png?text=Chambre+Romarin+-+Vue+1" alt="Chambre Romarin - Vue principale">
+        </div>
+        <div class="hebergement-details">
+          <h2>Chambre d'Hôte Romarin</h2>
+          <p class="hebergement-capacity"><strong>Capacité :</strong> 2 personnes</p>
+          <p class="hebergement-description">
+            Notre chambre d'hôte Romarin est un véritable cocon de douceur, idéale pour un séjour romantique. Spacieuse et lumineuse, elle offre une vue imprenable sur la campagne environnante. Petit-déjeuner inclus.
+          </p>
+          <p class="hebergement-equipements"><strong>Équipements :</strong> Grand lit double, Salle de bain privative avec baignoire, Wi-Fi, Climatisation, Plateau de courtoisie, Accès piscine.</p>
+          <p class="hebergement-atouts"><strong>Atouts :</strong> Vue panoramique, Petit-déjeuner gourmand, Atmosphère intime.</p>
+          <div class="hebergement-actions">
+            <a href="/reservation-contact/?hebergement=chambre-romarin" class="button">Réserver cette chambre</a>
+            <!-- <p class="hebergement-tarifs">À partir de <strong>75€ / nuit</strong> (petit-déjeuner inclus)</p> -->
+          </div>
+        </div>
+      </article>
+      
+      <!-- Exemple d'hébergement 3 -->
+      <article class="hebergement-item" id="gite-olivier">
+        <div class="hebergement-gallery">
+          <img src="https://via.placeholder.com/600x400.png?text=Gîte+Olivier+-+Vue+1" alt="Gîte Olivier - Vue principale">
+        </div>
+        <div class="hebergement-details">
+          <h2>Grand Gîte Olivier</h2>
+          <p class="hebergement-capacity"><strong>Capacité :</strong> 4-6 personnes</p>
+          <p class="hebergement-description">
+            Parfait pour les familles ou les groupes d'amis, le Gîte Olivier est spacieux et confortable. Il comprend deux chambres, un grand séjour, une cuisine américaine entièrement équipée et une grande terrasse pour profiter des repas en extérieur.
+          </p>
+          <p class="hebergement-equipements"><strong>Équipements :</strong> 2 Chambres, Cuisine équipée (lave-vaisselle, four), Salle de bain, WC séparés, Wi-Fi, Climatisation, Lave-linge, Grande terrasse, Barbecue, Accès piscine.</p>
+          <p class="hebergement-atouts"><strong>Atouts :</strong> Idéal familles, Grande terrasse avec barbecue, Spacieux et lumineux.</p>
+          <div class="hebergement-actions">
+            <a href="/reservation-contact/?hebergement=gite-olivier" class="button">Réserver ce gîte</a>
+            <!-- <p class="hebergement-tarifs">À partir de <strong>120€ / nuit</strong></p> -->
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  .section-padding {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+  .intro-text {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--spacing-xl);
+    font-size: 1.1rem;
+  }
+  .hebergements-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxl);
+  }
+  .hebergement-item {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile first */
+    gap: var(--spacing-lg);
+    background-color: var(--background-section);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+  .hebergement-gallery img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Limiter la hauteur de l'image principale */
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+  }
+  .hebergement-details h2 {
+    margin-top: 0;
+    color: var(--ocre-fonce);
+  }
+  .hebergement-capacity, .hebergement-equipements, .hebergement-atouts {
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.95rem;
+  }
+  .hebergement-equipements strong, .hebergement-atouts strong, .hebergement-capacity strong {
+    color: var(--text-principal);
+  }
+  .hebergement-actions {
+    margin-top: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+  }
+  .hebergement-tarifs {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--accent-olive);
+  }
+
+  @media (min-width: 768px) {
+    .hebergement-item {
+      grid-template-columns: 2fr 3fr; /* Image à gauche, détails à droite */
+      align-items: flex-start; /* Aligner les éléments en haut */
+    }
+    .hebergement-item:nth-child(odd) .hebergement-gallery {
+        order: 0; /* Image à gauche pour les impairs */
+    }
+    .hebergement-item:nth-child(even) .hebergement-gallery {
+        order: 1; /* Image à droite pour les pairs */
+    }
+    .hebergement-item:nth-child(even) .hebergement-details {
+        order: 0;
+    }
+  }
+</style>

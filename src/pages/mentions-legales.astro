@@ -1,0 +1,91 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Mentions Légales">
+  <div class="container section-padding">
+    <h1 class="text-center">Mentions Légales</h1>
+    
+    <section>
+      <h2>1. Informations Éditeur</h2>
+      <p><strong>Nom du site :</strong> Gîtes en Provence (Nom Fictif)</p>
+      <p><strong>Propriétaire :</strong> [Votre Nom ou Nom de Société]</p>
+      <p><strong>Adresse :</strong> 123 Chemin des Lavandes, 84000 Merveilleux Village, Provence, France (Adresse Fictive)</p>
+      <p><strong>Téléphone :</strong> <a href="tel:+33123456789">+33 (0)1 23 45 67 89</a> (Numéro Fictif)</p>
+      <p><strong>Email :</strong> <a href="mailto:contact@gitesprovence.fr">contact@gitesprovence.fr</a> (Email Fictif)</p>
+      <p><strong>Forme juridique :</strong> [Ex: Entreprise Individuelle, SARL, etc.]</p>
+      <p><strong>SIRET/SIREN :</strong> [Votre numéro SIRET/SIREN]</p>
+      <p><strong>Numéro de TVA intracommunautaire (si applicable) :</strong> [Votre numéro de TVA]</p>
+      <p><strong>Directeur de la publication :</strong> [Votre Nom]</p>
+    </section>
+
+    <section>
+      <h2>2. Hébergement du Site</h2>
+      <p>Ce site est hébergé par Netlify (pour les déploiements via StackBlitz/WebContainer).</p>
+      <p><strong>Netlify, Inc.</strong></p>
+      <p>2325 3rd Street, Suite 296, San Francisco, California 94107, USA</p>
+      <p>Site web : <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">www.netlify.com</a></p>
+      <p><em>(Si vous utilisez un autre hébergeur, mettez ses informations ici.)</em></p>
+    </section>
+
+    <section>
+      <h2>3. Propriété Intellectuelle</h2>
+      <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.</p>
+      <p>La reproduction de tout ou partie de ce site sur un support électronique quel qu'il soit est formellement interdite sauf autorisation expresse du directeur de la publication.</p>
+      <p>Les photographies, textes, slogans, dessins, images, séquences animées sonores ou non ainsi que toutes œuvres intégrées dans le site sont la propriété de [Votre Nom ou Nom de Société] ou de tiers ayant autorisé [Votre Nom ou Nom de Société] à les utiliser.</p>
+      <p><strong>Crédits photos :</strong> [Listez ici les crédits pour les photos si elles ne sont pas les vôtres ou si vous devez mentionner un photographe. Ex: "Photos par John Doe", "Images fournies par Unsplash", etc. Pour les placeholders actuels, ce n'est pas nécessaire.]</p>
+    </section>
+
+    <section>
+      <h2>4. Données Personnelles</h2>
+      <p>Les informations recueillies à partir du formulaire de contact ou de réservation font l'objet d'un traitement informatique destiné à la gestion de votre demande et de votre séjour. Le destinataire des données est [Votre Nom ou Nom de Société].</p>
+      <p>Conformément à la loi "Informatique et Libertés" du 6 janvier 1978 modifiée et au Règlement Général sur la Protection des Données (RGPD), vous bénéficiez d'un droit d'accès, de rectification, de suppression des informations qui vous concernent, que vous pouvez exercer en vous adressant à <a href="mailto:contact@gitesprovence.fr">contact@gitesprovence.fr</a>.</p>
+      <p>Pour plus d'informations, veuillez consulter notre <a href="/politique-confidentialite">Politique de Confidentialité</a>.</p>
+    </section>
+
+    <section>
+      <h2>5. Limitation de Responsabilité</h2>
+      <p>[Votre Nom ou Nom de Société] s'efforce d'assurer au mieux de ses possibilités, l'exactitude et la mise à jour des informations diffusées sur ce site, dont elle se réserve le droit de corriger, à tout moment et sans préavis, le contenu.</p>
+      <p>Toutefois, [Votre Nom ou Nom de Société] ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à la disposition sur ce site. En conséquence, [Votre Nom ou Nom de Société] décline toute responsabilité pour toute interruption du site, problèmes techniques, pour toute inexactitude ou omission sur des informations disponibles sur le site, pour tous dommages résultant d'une intrusion frauduleuse d'un tiers ayant entraîné une modification des informations mises à la disposition sur le site.</p>
+    </section>
+    
+    <section>
+      <h2>6. Liens Hypertextes</h2>
+      <p>Le site peut contenir des liens hypertextes vers d'autres sites présents sur le réseau Internet. Les liens vers ces autres ressources vous font quitter le site. Il est possible de créer un lien vers la page de présentation de ce site sans autorisation expresse de l'ÉDITEUR. Aucune autorisation ou demande d'information préalable ne peut être exigée par l'éditeur à l'égard d'un site qui souhaite établir un lien vers le site de l'éditeur. Il convient toutefois d'afficher ce site dans une nouvelle fenêtre du navigateur. Cependant, l'ÉDITEUR se réserve le droit de demander la suppression d'un lien qu'il estime non conforme à l'objet du site.</p>
+    </section>
+
+  </div>
+</MainLayout>
+
+<style>
+  .section-padding {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+  .container section {
+    margin-bottom: var(--spacing-xl);
+  }
+  .container h1 {
+    margin-bottom: var(--spacing-xl);
+  }
+  .container h2 {
+    color: var(--ocre-fonce);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--ocre-clair);
+  }
+  .container p, .container li {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.7;
+  }
+  .container strong {
+    color: var(--text-principal);
+  }
+  .container a {
+    color: var(--ocre-fonce);
+  }
+  .container a:hover {
+    color: var(--accent-olive);
+  }
+</style>

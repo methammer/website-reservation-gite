@@ -1,0 +1,88 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Gîtes en Provence</h4>
+        <p>Votre destination de rêve pour un séjour authentique au cœur de la nature provençale.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/hebergements/">Hébergements</a></li>
+          <li><a href="/piscine-nature/">Piscine & Nature</a></li>
+          <li><a href="/reservation-contact/">Réservation</a></li>
+          <li><a href="/#temoignages">Témoignages</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contactez-nous</h4>
+        <p>
+          Adresse: 123 Chemin des Lavandes, 84000 Provence, France<br/>
+          Téléphone: <a href="tel:+330123456789">+33 (0)1 23 45 67 89</a><br/>
+          Email: <a href="mailto:contact@gitesprovence.fr">contact@gitesprovence.fr</a>
+        </p>
+        <!-- Icônes réseaux sociaux (à ajouter plus tard) -->
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Gîtes en Provence. Tous droits réservés.</p>
+      <p><a href="/mentions-legales">Mentions Légales</a> | <a href="/politique-confidentialite">Politique de Confidentialité</a></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--ocre-fonce);
+    color: var(--ocre-clair);
+    padding: var(--spacing-xl) 0 var(--spacing-md);
+    margin-top: var(--spacing-xxl);
+  }
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+  .footer-section {
+    flex: 1;
+    min-width: 250px; /* Pour un meilleur affichage sur mobile avant de wrapper */
+  }
+  .footer-section h4 {
+    color: var(--text-clair);
+    font-family: var(--font-family-serif);
+    margin-bottom: var(--spacing-md);
+  }
+  .footer-section p, .footer-section ul li {
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+  }
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-section a {
+    color: var(--ocre-clair);
+  }
+  .footer-section a:hover, .footer-section a:focus {
+    color: var(--text-clair);
+    text-decoration: underline;
+  }
+  .footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--ocre-principal);
+    font-size: 0.85rem;
+  }
+  .footer-bottom p {
+    margin-bottom: var(--spacing-xs);
+  }
+  .footer-bottom a {
+    color: var(--ocre-clair);
+  }
+</style>

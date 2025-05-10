@@ -1,0 +1,124 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Piscine & Nature">
+  <div class="container section-padding">
+    <header class="page-header text-center">
+      <h1>Piscine & Nature : Votre Oasis en Provence</h1>
+      <p class="intro-text">Plongez dans un univers de détente et de beauté naturelle. Notre domaine est un véritable havre de paix, conçu pour les amoureux de la nature et les familles en quête de moments inoubliables.</p>
+    </header>
+
+    <!-- Section Piscine -->
+    <section id="piscine" class="content-section">
+      <div class="section-content">
+        <div class="text-content">
+          <h2>Notre Oasis de Fraîcheur : La Grande Piscine</h2>
+          <p>Au cœur de notre domaine, une magnifique et grande piscine vous attend pour des moments de pure détente. Ses dimensions généreuses (par exemple, 12m x 6m) permettent à chacun de nager et de s'amuser en toute tranquillité.</p>
+          <p>Nous portons une attention particulière à la qualité de l'eau, avec un traitement respectueux (mentionner si écologique, ex: au sel). Autour de la piscine, de confortables transats et parasols sont à votre disposition pour parfaire votre bronzage ou lire à l'ombre. L'ambiance y est paisible et conviviale, idéale pour se ressourcer après une journée de découverte en Provence.</p>
+          <p><strong>Horaires d'accès :</strong> Généralement de 10h à 20h (à confirmer), pour respecter le repos de chacun.</p>
+        </div>
+        <div class="media-content">
+          <img src="https://via.placeholder.com/600x400.png?text=Grande+Piscine+et+Transats" alt="La grande piscine avec ses transats et parasols">
+          <!-- Ajouter une petite galerie ou un carrousel ici si plusieurs photos -->
+          <div class="gallery-thumbnails">
+            <img src="https://via.placeholder.com/150x100.png?text=Piscine+Vue+1" alt="Piscine détail 1">
+            <img src="https://via.placeholder.com/150x100.png?text=Piscine+Vue+2" alt="Piscine détail 2">
+            <img src="https://via.placeholder.com/150x100.png?text=Piscine+Vue+3" alt="Piscine détail 3">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Nature & Environnement -->
+    <section id="nature" class="content-section reverse-layout">
+      <div class="section-content">
+        <div class="text-content">
+          <h2>Un Écrin de Verdure en Pleine Provence</h2>
+          <p>Notre domaine s'étend sur plusieurs hectares (préciser si possible) d'un paysage provençal typique, où se mêlent oliviers centenaires, lavandes parfumées et chênes verts. C'est un véritable refuge pour la biodiversité locale : vous pourrez observer de nombreux oiseaux, papillons et peut-être même apercevoir un écureuil curieux.</p>
+          <p>Plusieurs sentiers de randonnée balisés partent directement de la propriété, vous invitant à explorer les environs à votre rythme. Que vous soyez adepte de marche contemplative ou de balades familiales, vous trouverez des itinéraires adaptés. Des espaces de détente sont aménagés dans le jardin pour lire, méditer ou simplement profiter du calme et de la sérénité des lieux.</p>
+          <p><em>(Optionnel)</em> Nous sommes engagés dans une démarche environnementale visant à préserver ce cadre unique (ex: gestion de l'eau, pas de pesticides, tri sélectif, etc.).</p>
+        </div>
+        <div class="media-content">
+          <img src="https://via.placeholder.com/600x400.png?text=Cadre+Naturel+et+Sentiers" alt="Le cadre naturel avec ses sentiers de randonnée">
+           <div class="gallery-thumbnails">
+            <img src="https://via.placeholder.com/150x100.png?text=Nature+Vue+1" alt="Nature détail 1">
+            <img src="https://via.placeholder.com/150x100.png?text=Nature+Vue+2" alt="Nature détail 2">
+            <img src="https://via.placeholder.com/150x100.png?text=Nature+Vue+3" alt="Nature détail 3">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="conclusion text-center section-padding">
+      <h3>Idéal pour les familles et les amoureux de la nature, notre domaine est la promesse de vacances réussies. Réservez votre coin de paradis.</h3>
+      <a href="/reservation-contact/" class="button">Réserver votre séjour</a>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  .section-padding {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+  .page-header .intro-text {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--spacing-xl);
+    font-size: 1.1rem;
+  }
+  .content-section {
+    margin-bottom: var(--spacing-xxl);
+  }
+  .content-section .section-content {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile first */
+    gap: var(--spacing-xl);
+    align-items: center;
+  }
+  .content-section h2 {
+    color: var(--ocre-fonce);
+    margin-bottom: var(--spacing-lg);
+  }
+  .media-content img {
+    width: 100%;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--spacing-sm);
+  }
+  .gallery-thumbnails {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap; /* Pour les petits écrans */
+  }
+  .gallery-thumbnails img {
+    width: calc(33.333% - var(--spacing-sm) * 2 / 3); /* Ajuster pour 3 images par ligne avec gap */
+    max-width: 150px; /* Limiter la taille des miniatures */
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer; /* Pour indiquer qu'elles pourraient être cliquables pour un agrandissement */
+  }
+
+  @media (min-width: 768px) {
+    .content-section .section-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .content-section.reverse-layout .media-content {
+      order: -1; /* Inverse l'ordre pour alterner image/texte */
+    }
+  }
+
+  .conclusion {
+    background-color: var(--ocre-clair);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+  }
+  .conclusion h3 {
+    color: var(--ocre-fonce);
+    margin-bottom: var(--spacing-lg);
+  }
+</style>
