@@ -1,11 +1,14 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-// Importer d'autres composants nécessaires pour la page d'accueil ici
-// import HeroSection from '../components/HeroSection.astro';
-// import AtoutsSection from '../components/AtoutsSection.astro';
-// import HebergementsApercu from '../components/HebergementsApercu.astro';
-// import PiscineNatureTeaser from '../components/PiscineNatureTeaser.astro';
-// import TemoignagesSection from '../components/TemoignagesSection.astro';
+// Corrected: Import specific icons from lucide-astro
+import { Waves, Leaf, Sparkles, Users } from 'lucide-astro';
+
+const heroImages = [
+  { src: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop", alt: "Relaxing poolside view at a Provençal gîte" },
+  { src: "https://images.pexels.com/photos/161264/lavender-lavender-field-purple-provence-161264.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop", alt: "Expansive lavender fields in Provence" },
+  { src: "https://images.pexels.com/photos/130879/pexels-photo-130879.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop", alt: "Charming stone house exterior in a Provençal village" },
+  { src: "https://images.pexels.com/photos/6782473/pexels-photo-6782473.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop", alt: "Cozy and inviting interior of a gîte in Provence" }
+];
 ---
 
 <MainLayout title="Accueil | Votre Séjour en Provence : Gîtes & Chambres d'Hôte avec Piscine et Nature">
@@ -13,8 +16,17 @@ import MainLayout from '../layouts/MainLayout.astro';
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-background">
-      <!-- Image de fond via CSS ou <img /> tag. Pour l'instant, une couleur. -->
-      <!-- Idéalement, un carrousel d'images ici -->
+      {heroImages.map((image, index) => (
+        <img 
+          src={image.src} 
+          alt={image.alt} 
+          class={`slide ${index === 0 ? 'active' : ''}`} 
+          aria-hidden="true" 
+          loading={index === 0 ? "eager" : "lazy"}
+          draggable="false"
+        />
+      ))}
+      <div class="hero-overlay"></div>
     </div>
     <div class="hero-content container">
       <h1>Votre Séjour en Provence : Gîtes & Chambres d'Hôte avec Grande Piscine et Cadre Naturel d'Exception.</h1>
@@ -30,24 +42,35 @@ import MainLayout from '../layouts/MainLayout.astro';
   <section id="atouts" class="atouts-section container section-padding">
     <h2 class="text-center">Pourquoi Nous Choisir ?</h2>
     <div class="atouts-grid">
-      <!-- Icônes à ajouter (SVG ou font icons) -->
       <div class="atout-item">
-        <div class="atout-icon">[Icône Piscine]</div>
+        <div class="atout-icon">
+          <!-- Corrected: Use specific icon component -->
+          <Waves size={48} stroke-width={1.5} />
+        </div>
         <h3>Grande Piscine</h3>
         <p>Détente et fraîcheur assurées dans notre vaste piscine, un véritable oasis.</p>
       </div>
       <div class="atout-item">
-        <div class="atout-icon">[Icône Nature]</div>
+        <div class="atout-icon">
+          <!-- Corrected: Use specific icon component -->
+          <Leaf size={48} stroke-width={1.5} />
+        </div>
         <h3>Cadre Naturel Préservé</h3>
         <p>Calme, randonnées, biodiversité au sein d'un domaine d'exception.</p>
       </div>
       <div class="atout-item">
-        <div class="atout-icon">[Icône Charme]</div>
+        <div class="atout-icon">
+          <!-- Corrected: Use specific icon component -->
+          <Sparkles size={48} stroke-width={1.5} />
+        </div>
         <h3>Séjours Authentiques</h3>
         <p>Charme provençal, hospitalité chaleureuse et hébergements de caractère.</p>
       </div>
       <div class="atout-item">
-        <div class="atout-icon">[Icône Famille]</div>
+        <div class="atout-icon">
+          <!-- Corrected: Use specific icon component -->
+          <Users size={48} stroke-width={1.5} />
+        </div>
         <h3>Idéal Familles & Nature</h3>
         <p>Espace, jeux en plein air, et découvertes pour petits et grands.</p>
       </div>
@@ -59,7 +82,6 @@ import MainLayout from '../layouts/MainLayout.astro';
     <div class="container">
       <h2 class="text-center">Nos Hébergements de Charme</h2>
       <div class="hebergements-grid">
-        <!-- Exemple de carte d'hébergement (à composantiser) -->
         <article class="hebergement-card">
           <img src="https://images.pexels.com/photos/534151/pexels-photo-534151.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="Gîte Lavande - Intérieur chaleureux d'un gîte en Provence">
           <div class="card-content">
@@ -109,7 +131,6 @@ import MainLayout from '../layouts/MainLayout.astro';
     <div class="container">
       <h2 class="text-center">Ce que nos clients disent</h2>
       <div class="temoignages-grid">
-        <!-- Exemple de témoignage (à composantiser) -->
         <blockquote class="temoignage-card">
           <p>"Un séjour inoubliable ! La piscine est superbe et le cadre est tout simplement magique. Nous reviendrons !"</p>
           <footer>- Famille Dupont</footer>
@@ -128,6 +149,24 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 </MainLayout>
 
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.hero-background .slide');
+    let currentSlide = 0;
+    const slideInterval = 6000; // 6 seconds
+
+    if (slides.length > 0) {
+      slides[currentSlide].classList.add('active');
+
+      setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }, slideInterval);
+    }
+  });
+</script>
+
 <style>
   .section-padding {
     padding-top: var(--spacing-xxl);
@@ -137,12 +176,13 @@ import MainLayout from '../layouts/MainLayout.astro';
   /* Hero Section */
   .hero-section {
     position: relative;
-    min-height: 70vh; /* Ajuster selon l'image */
+    min-height: 70vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--text-clair);
+    overflow: hidden; 
   }
   .hero-background {
     position: absolute;
@@ -150,29 +190,50 @@ import MainLayout from '../layouts/MainLayout.astro';
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--ocre-principal); /* Couleur de fond temporaire */
-    /* background-image: url('/images/hero-piscine.jpg'); */ /* À remplacer par une vraie image */
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
+    z-index: 1; 
   }
-  .hero-background::after { /* Overlay pour lisibilité du texte */
-    content: '';
+  .hero-background .slide {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Ajuster l'opacité */
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1; 
+  }
+  .hero-background .slide.active {
+    opacity: 1;
+  }
+  .hero-overlay { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(34, 34, 34, 0.5); 
+    z-index: 2; 
+  }
+  .hero-content {
+    position: relative; 
+    z-index: 3; 
   }
   .hero-content h1 {
-    font-size: 2.8rem; /* ~45px */
+    font-family: var(--font-family-serif);
+    font-weight: 700; 
+    font-size: 2.8rem; 
     margin-bottom: var(--spacing-md);
-    color: var(--text-clair); /* S'assurer que le H1 est clair sur fond sombre */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    color: var(--text-clair);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7); 
+    line-height: 1.2;
   }
   .hero-content .intro-text {
-    font-size: 1.25rem; /* ~20px */
+    font-family: var(--font-family-sans-serif);
+    font-weight: 400; 
+    font-size: 1.25rem;
+    line-height: 1.6;
     margin-bottom: var(--spacing-lg);
     max-width: 700px;
     margin-left: auto;
@@ -182,7 +243,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     display: flex;
     justify-content: center;
     gap: var(--spacing-md);
-    flex-wrap: wrap; /* Pour les petits écrans */
+    flex-wrap: wrap;
   }
   .hero-cta .button {
     font-size: 1.1rem;
@@ -201,17 +262,32 @@ import MainLayout from '../layouts/MainLayout.astro';
     background-color: var(--background-section);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .atout-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
   }
   .atout-icon {
-    font-size: 2.5rem; /* Taille de l'icône */
+    /* font-size is not needed here as size is passed as prop to lucide icons */
     color: var(--ocre-fonce);
-    margin-bottom: var(--spacing-sm);
-    /* Remplacer par de vraies icônes SVG ou une font d'icônes */
+    margin-bottom: var(--spacing-md); 
+    display: inline-block; 
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .atout-icon svg { /* Style the SVG directly if needed, or rely on props */
+    transition: transform 0.3s ease; /* For hover effect on SVG */
+  }
+  .atout-icon:hover svg { 
+    transform: scale(1.15);
+  }
+  .atout-icon:hover { /* For color change on hover of the container */
+     color: var(--accent-olive);
   }
   .atout-item h3 {
-    font-size: 1.25rem;
+    font-size: 1.35rem; 
     color: var(--ocre-fonce);
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
   }
 
   /* Aperçu Hébergements */
@@ -228,6 +304,11 @@ import MainLayout from '../layouts/MainLayout.astro';
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+   .hebergement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
   }
   .hebergement-card img {
     width: 100%;
@@ -260,12 +341,17 @@ import MainLayout from '../layouts/MainLayout.astro';
   }
   .teaser-piscine-nature-section .teaser-image {
     max-width: 48%;
-    min-width: 300px; /* Pour éviter qu'elles deviennent trop petites */
-    height: 350px; /* Maintenir la hauteur pour un meilleur alignement */
-    object-fit: cover; /* S'assurer que l'image couvre bien la zone */
+    min-width: 300px; 
+    height: 350px; 
+    object-fit: cover; 
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease;
   }
+  .teaser-piscine-nature-section .teaser-image:hover {
+    transform: scale(1.03);
+  }
+
 
   /* Témoignages Section */
   .temoignages-grid {
@@ -279,7 +365,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     padding: var(--spacing-lg);
     border-radius: var(--border-radius-md);
     border-left: 5px solid var(--ocre-fonce);
-    margin: 0; /* Reset blockquote default margin */
+    margin: 0; 
   }
   .temoignage-card p {
     font-style: italic;
@@ -293,14 +379,20 @@ import MainLayout from '../layouts/MainLayout.astro';
 
   @media (max-width: 768px) {
     .hero-content h1 {
-      font-size: 2.2rem;
+      font-size: 2.2rem; 
     }
     .hero-content .intro-text {
-      font-size: 1rem;
+      font-size: 1.1rem; 
     }
     .teaser-piscine-nature-section .teaser-image {
       max-width: 100%;
-      height: auto; /* Ajuster la hauteur automatiquement sur mobile */
+      height: auto; 
+    }
+    .atout-icon svg { /* Adjust SVG size for mobile if props aren't enough or for finer control */
+      /* Example: width: 36px; height: 36px; */
+    }
+    .atout-item h3 {
+      font-size: 1.2rem;
     }
   }
 </style>
