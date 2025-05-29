@@ -14,7 +14,7 @@ import MainLayout from '../layouts/MainLayout.astro';
       <!-- Exemple d'hébergement 1 -->
       <article class="hebergement-item" id="gite-lavande">
         <div class="hebergement-gallery">
-          <img src="https://via.placeholder.com/600x400.png?text=Gîte+Lavande+-+Vue+1" alt="Gîte Lavande - Vue principale">
+          <img src="https://images.pexels.com/photos/6782473/pexels-photo-6782473.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Gîte Lavande - Vue principale d'un gîte de charme en Provence">
           <!-- Autres images pour une galerie/carrousel -->
         </div>
         <div class="hebergement-details">
@@ -35,7 +35,7 @@ import MainLayout from '../layouts/MainLayout.astro';
       <!-- Exemple d'hébergement 2 -->
       <article class="hebergement-item" id="chambre-romarin">
         <div class="hebergement-gallery">
-          <img src="https://via.placeholder.com/600x400.png?text=Chambre+Romarin+-+Vue+1" alt="Chambre Romarin - Vue principale">
+          <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Chambre Romarin - Vue principale d'une chambre d'hôte élégante et confortable">
         </div>
         <div class="hebergement-details">
           <h2>Chambre d'Hôte Romarin</h2>
@@ -55,7 +55,7 @@ import MainLayout from '../layouts/MainLayout.astro';
       <!-- Exemple d'hébergement 3 -->
       <article class="hebergement-item" id="gite-olivier">
         <div class="hebergement-gallery">
-          <img src="https://via.placeholder.com/600x400.png?text=Gîte+Olivier+-+Vue+1" alt="Gîte Olivier - Vue principale">
+          <img src="https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Gîte Olivier - Vue principale d'un grand gîte familial avec terrasse ensoleillée">
         </div>
         <div class="hebergement-details">
           <h2>Grand Gîte Olivier</h2>
@@ -104,8 +104,7 @@ import MainLayout from '../layouts/MainLayout.astro';
   }
   .hebergement-gallery img {
     width: 100%;
-    height: auto;
-    max-height: 400px; /* Limiter la hauteur de l'image principale */
+    height: 400px; /* Maintenir une hauteur fixe pour la galerie */
     object-fit: cover;
     border-radius: var(--border-radius-md);
   }
@@ -146,6 +145,12 @@ import MainLayout from '../layouts/MainLayout.astro';
     }
     .hebergement-item:nth-child(even) .hebergement-details {
         order: 0;
+    }
+  }
+  @media (max-width: 767px) {
+    .hebergement-gallery img {
+      height: auto; /* Ajuster la hauteur automatiquement sur mobile */
+      max-height: 300px; /* Limiter la hauteur sur mobile */
     }
   }
 </style>
